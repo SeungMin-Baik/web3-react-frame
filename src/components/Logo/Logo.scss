@@ -1,0 +1,12 @@
+@import "src/theme";
+
+.app-logo {
+    cursor: pointer;
+    position: relative;
+
+    > .logo {
+        font-weight: bold;
+        font-size: 28px;
+    }
+    
+}

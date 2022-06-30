@@ -1,0 +1,172 @@
+@import 'src/theme';
+
+.account-button-container {
+  width: 190px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: $spacing24;
+  margin-right: 42px;
+
+  @media (max-width: $mobileWidth) {
+    display: none;
+  }
+
+  > .connect-button {
+    > .web3-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 16px;
+
+      position: static;
+      width: 160px;
+      height: 40px;
+
+      color: #343a3f;
+      background: #ffffff;
+
+      border: 1px solid #b8b8b8;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      margin: 0 20px;
+    }
+  }
+
+  > .account-button-wrapper {
+    > .account-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 4px 8px 8px;
+
+      position: static;
+      width: 160px;
+      height: 40px;
+
+      background: rgba(238, 238, 238, 0.5);
+      border-radius: 4px;
+
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      margin: 0 20px;
+
+      > .profile-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0 10px;
+
+        > .symbol-whale {
+          width: 24px;
+          height: 24px;
+          margin-right: 6px;
+        }
+
+        > .symbol {
+          width: 25px;
+          height: 25px;
+          margin-right: 6px;
+          border-radius: 12px;
+          border: 1px solid #eeeeee;
+          box-sizing: border-box;
+        }
+
+        @media (max-width: $mobileWidth) {
+          //display: none;
+        }
+
+        &.connected {
+          display: flex;
+        }
+      }
+
+      .vip {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: right;
+        color: #51585e;
+      }
+
+      > .divider {
+        width: 1px;
+        height: 22px;
+
+        background: #b8b8b8;
+        opacity: 0.2;
+
+        @media (max-width: $mobileWidth) {
+          //display: none;
+        }
+      }
+
+      > .account {
+        padding-left: 10px;
+        font-size: 14px;
+        margin-right: 12px;
+        color: $web3;
+      }
+    }
+
+    &:hover {
+      > .account-page-list {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    > .account-page-list {
+      position: absolute;
+      visibility: hidden;
+      right: 0;
+      top: 45px;
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      justify-content: center;
+      opacity: 0;
+      transition: visibility 0.3s linear, opacity 0.3s linear;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid $divider;
+      background-color: $white;
+      cursor: pointer;
+      border-radius: $borderRadius;
+
+      > .list-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        padding: 12px;
+        border-bottom: 1px solid $divider;
+
+        &.logout {
+          color: #888888;
+        }
+
+        &:last-child {
+          border-bottom: unset;
+        }
+
+        &:hover {
+          background-color: rgba(65, 128, 219, 0.2);
+        }
+      }
+    }
+  }
+}

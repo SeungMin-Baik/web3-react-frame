@@ -1,0 +1,34 @@
+@import "src/theme";
+
+
+.transcation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > .transcation-wrapper {
+        width: 100%;
+        max-width: $siteWidth;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 64px 0 $spacing24 0;
+
+        @media (max-width: $mobileWidth) {
+            flex-direction: column;
+            margin: 0;
+            padding: $spacing24;
+        }
+    }
+
+    > .divider {
+        margin-top: 54px;
+
+        @media (max-width: $mobileWidth) {
+            margin-top: $spacing24;
+        }
+    }
+}
+

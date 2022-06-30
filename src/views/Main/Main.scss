@@ -1,0 +1,53 @@
+@import 'src/theme';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .main-wrapper {
+    width: 100%;
+    max-width: $siteWidth;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 64px 0 $spacing24 0;
+
+    @media (max-width: $mobileWidth) {
+      flex-direction: column;
+      margin: 0;
+      padding: $spacing24;
+    }
+
+    > div:first-child {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    > div:nth-child(2) {
+      font-size: 15px;
+      margin-bottom: 40px;
+      color: rgb(99, 99, 99);
+    }
+
+    > .web3-wrapper {
+      width: 55%;
+      height: 50vh;
+      border: 1px solid #a7a7a7;
+      border-radius: 12px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+  }
+
+  > .divider {
+    margin-top: 54px;
+
+    @media (max-width: $mobileWidth) {
+      margin-top: $spacing24;
+    }
+  }
+}

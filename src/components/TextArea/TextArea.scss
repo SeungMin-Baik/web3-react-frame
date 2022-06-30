@@ -1,0 +1,22 @@
+@import "src/theme";
+
+.text-area-wrapper {
+    width: 100%;
+    display: flex;
+    border: 1px solid $borderWhite;
+    border-radius: 5px;
+
+    > textarea {
+        flex: 1;
+        width: 100%;
+        border: none;
+        height: 70px;
+        padding: 12px;
+        border-radius: 5px;
+
+        &:focus {
+            box-shadow: $grey 0 0 8px 0;
+            outline: none;
+        }
+    }
+}

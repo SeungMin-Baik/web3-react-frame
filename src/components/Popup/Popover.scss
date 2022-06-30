@@ -1,0 +1,64 @@
+@import 'src/theme';
+
+.web3-popup {
+  height: 100%;
+  padding: 0 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 3px solid $borderBlue;
+  }
+
+  > .popup-header {
+  }
+
+  > .popover-body {
+    position: absolute;
+    visibility: hidden;
+    right: 0;
+    top: $headerHeight;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    opacity: 0;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+    box-shadow: #707a83 0 0 8px 0;
+    background-color: $white;
+
+    > .popover-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+      padding: 12px;
+
+      &:hover {
+        box-shadow: #707a83 0 0 8px 0;
+        transition: all 0.1s ease 0s;
+        background-color: #3498db;
+      }
+
+      > .symbol {
+        margin-right: 5px;
+      }
+
+      > .label {
+        flex: 1;
+        font-size: 16px;
+        text-align: start;
+      }
+    }
+  }
+
+  &:hover {
+    > .popover-body {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

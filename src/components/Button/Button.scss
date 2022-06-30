@@ -1,0 +1,61 @@
+@import 'src/theme';
+
+.web3-button {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: $spacing16;
+  //font-weight: bold;
+  font-size: 16px;
+
+  &.default {
+    color: $white;
+    background-color: $web3;
+
+    &:hover {
+      background-color: $web3_hover;
+      text-decoration: underline;
+    }
+  }
+
+  &.white {
+    background-color: $white;
+    color: $web3;
+    border: 1px solid $web3;
+
+    &:hover {
+      color: $web3_hover;
+      text-decoration: underline;
+      border: 1px solid $web3_hover;
+    }
+  }
+
+  &.disabled {
+    background-color: $black_343a3f;
+    color: $grey_A3A9B6;
+  }
+
+  &.round {
+    border-radius: $borderRadius;
+  }
+
+  &.dimmed {
+    opacity: 0.5;
+  }
+
+  &.smooth {
+    border-radius: 4px;
+  }
+
+  &.curved {
+    border-radius: $borderRadius16;
+  }
+
+  &.rectangle {
+    border-radius: 0;
+  }
+}

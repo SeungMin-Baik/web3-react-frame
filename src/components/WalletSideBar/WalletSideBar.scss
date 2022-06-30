@@ -1,0 +1,271 @@
+@import "src/theme";
+
+.wallet-side-bar-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.15);
+    transition: opacity 0.3s ease-in-out 0s;
+
+    @media (max-width: $mobileWidth) {
+        display: none;
+    }
+
+    &.inactive {
+        opacity: 0;
+        display: none;
+    }
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.wallet-side-bar {
+    &.inactive {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 420px;
+        z-index: 40;
+        height: calc(100% - 72px);
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(229, 232, 235);
+        overflow: auto;
+        transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+        visibility: visible;
+        transform: translate3d(100%, 0px, 0px);
+        opacity: 0;
+
+        @media (max-width: $mobileWidth) {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 420px;
+        z-index: 400;
+        height: calc(100% - 72px);
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(229, 232, 235);
+        overflow: auto;
+        transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+        visibility: visible;
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+
+        @media (max-width: $mobileWidth) {
+            width: 100%;
+        }
+
+        > .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid $borderWhite;
+
+            > .label {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                > .popup {
+                    width: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 30px;
+                    left: 30px;
+                    border: 1px solid rgb(229, 232, 235);
+                    box-shadow: $grey 0 0 8px 0;
+                    border-radius: 5px;
+                    background-color: $white;
+
+                    > .popup-item {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: $borderWhite;
+                        }
+
+                        > .symbol {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                > span {
+                    font-size: 12px;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        > .body {
+            display: flex;
+            flex-direction: column;
+
+            .wallet-provider-card {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                background-color: transparent;
+                font-size: 13px;
+                font-weight: 400;
+                color: $black;
+                cursor: pointer;
+                padding: $spacing16 0;
+                position: relative;
+                border-bottom: 1px solid $divider;
+
+                > .wallet-logo {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: $spacing8;
+
+                    > img {
+                        width: auto;
+                        height: auto;
+                        max-width: 100%;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(0,0,0,0.15);
+                }
+
+                > .symbol {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+
+            > .balances {
+
+                > .total-balance {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+                    border-radius: $borderRadius;
+                    border: 1px solid $borderWhite;
+                    margin-bottom: 20px;
+
+                    > span {
+                        text-align: center;
+                    }
+
+                    > .label {
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                    }
+
+                    > .value {
+                        font-size: 24px;
+                        font-weight: 600;
+                    }
+                }
+
+                > .token-info {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 12px;
+
+                    > .token-image {
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 12px;
+
+                        > img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    > .token-balance {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        > .wrapper {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            > .label {
+
+                            }
+
+                            > .value {
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            > .wallets {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: $spacing16;
+
+                > .title {
+                    font-size: $font16;
+                    font-weight: 700;
+                    margin-bottom: $spacing4;
+                }
+
+                > .desc {
+                    font-size: 13px;
+
+                    > .text-link {
+                        font-weight: 700;
+                    }
+
+                    margin-bottom: 32px;
+                }
+            }
+
+            > .wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: $spacing24 $spacing16;
+                border-bottom: 1px solid $divider;
+                cursor: pointer;
+
+                &.logout {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
